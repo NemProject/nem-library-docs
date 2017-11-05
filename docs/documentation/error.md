@@ -2,7 +2,7 @@
 
 In case NIS encounters an error while processing a request it returns an error.
 
-This chapter describes the errors messages that can be returned from NIS.
+This chapter describes the error messages that can be returned from NIS.
 
 ## Error messages
 
@@ -10,7 +10,7 @@ This chapter describes the errors messages that can be returned from NIS.
 
 **Request method 'GET' not supported**
 
-The request was performed as GET request but was expected to be a POST request.
+The request was performed as a GET request but was expected to be a POST request.
 
 
 **address must be valid:**
