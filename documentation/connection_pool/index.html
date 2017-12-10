@@ -237,10 +237,10 @@
             <div class="section">
               
                 <h1 id="connection-pool">Connection Pool</h1>
-<p>NEM Library handle the connections to the NEM Nodes (NIS) automatically.</p>
+<p>NEM Library handles the connections to the NEM Nodes (NIS) automatically.</p>
 <h2 id="how-to-use-it">How to use it</h2>
 <p>We use <code>AccountHttp</code> for this example, but it works for every <code>*Http</code> class.</p>
-<p>All <code>*Http</code> classes already use the Connection Pool by default. If no argument is passet into its constructor, the default NIS nodes will be used.
+<p>All <code>*Http</code> classes already use the Connection Pool by default. If no argument is passed into its constructor, the default NIS nodes will be used.
 If you like to use your own NIS nodes, you could specify an array with the domain information.</p>
 <p>Furthermore, the Connection Pool allows you to specify the protocol that you like to use in the second constructor argument.</p>
 <pre><code class="typescript">NEMLibrary.bootstrap(NetworkTypes.TEST_NET);
@@ -254,7 +254,7 @@ const accountHttpWithCustomNodes = new AccountHttp([
 ]);
 </code></pre>
 
-<p>In case that you wanted an specific protocol, per example <code>HTTPS</code>, you could specify your preferred protocol in the <code>AccountHttp</code> constructor.</p>
+<p>In case you want to use a specific protocol, for example <code>HTTPS</code>, you can specify your preferred protocol in the <code>AccountHttp</code> constructor.</p>
 <pre><code class="typescript">NEMLibrary.bootstrap(NetworkTypes.TEST_NET);
 const accountHttpWithDefaultNodes = new AccountHttp(undefined, &quot;https&quot;);
 </code></pre>
@@ -262,9 +262,9 @@ const accountHttpWithDefaultNodes = new AccountHttp(undefined, &quot;https&quot;
 <h2 id="how-it-works">How it works</h2>
 <p><img alt="Functional" src="../../img/Connection_Pool.png" /></p>
 <ol>
-<li>The NEM Library start the request to a NIS node.</li>
+<li>The NEM Library starts the request to a NIS node.</li>
 <li>If the request is successfull, the result is returned. If not, step 3.</li>
-<li>The connection pool handles the connection error, and tries the next available server.</li>
+<li>The connection pool handles the connection error and tries the next available server.</li>
 </ol>
               
             </div>

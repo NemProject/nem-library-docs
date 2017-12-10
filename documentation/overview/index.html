@@ -246,8 +246,8 @@ NEMLibrary.bootstrap(NetworkTypes.TEST_NET);
 <p>Your application can have two modes, <code>NetworkTypes.TEST_NET</code> and <code>NetworkTypes.MAIN_NET</code>.
 Depending on the environment that you want to use, you should call the bootstrap method, with <code>MAIN_NET</code>
 or <code>TEST_NET</code>.</p>
-<p>Because the application should have a unique environment, call two times <code>NEMLibrary.bootstrap(_)</code> will throw an <code>Error</code>.
-In case that you need to change between environments in runtime, call <code>NEMLibrary.reset()</code> first.</p>
+<p>Because the application should have a unique environment, calling <code>NEMLibrary.bootstrap(_)</code> multiple times will throw an <code>Error</code>.
+In case you need to change between environments in runtime, call <code>NEMLibrary.reset()</code> first.</p>
 <h1 id="configure-endpoints">Configure endpoints</h1>
 <p>Each infrastructure endpoints share the same constructor.</p>
 <pre><code class="typescript">// Using custom NIS Node
