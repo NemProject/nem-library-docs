@@ -80,13 +80,13 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 ### 0.10.0
 
-**BRAKING CHANGES**
+**BREAKING CHANGES**
 
 - [AccountHttp](/documentation/account.md): pagination replaced function arguements by QueryParams
 
 ### 0.9.0
 
-**BRAKING CHANGES**
+**BREAKING CHANGES**
 
 - [TransferTransaction](/documentation/transaction.md): amount and mosaic fields are now private, you have to use xem() and mosaic() methods instead
 - [AccountHttp](/documentation/account.md): replaced function arguements by QueryParams & changed the order of the params in some cases
@@ -119,7 +119,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 ### 0.5.1 
 
-**BRAKING CHANGES**
+**BREAKING CHANGES**
 
 - Where you had `XEM(3)` now you should add the `new` apperator first -> `new XEM(3)`
 - Where you had `mosaicHttp.getMosaicDefinitions`, now you should call `mosaicHttp.getAllMosaicsGivenNamespace`
