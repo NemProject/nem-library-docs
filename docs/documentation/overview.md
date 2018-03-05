@@ -32,7 +32,7 @@ Each infrastructure endpoints share the same constructor.
 const accountHttp = new AccountHttp([{
     protocol: "http",
     domain: "104.128.226.60",
-    port: "7890"
+    port: 7890
 }]);
 
 // Using default NIS Node
