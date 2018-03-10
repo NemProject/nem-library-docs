@@ -7,7 +7,7 @@ for creating Blockchain applications.
 
 [Source Code Repository on GitHub](https://github.com/aleixmorgadas/nem-library-ts)
 
-#### stable version 0.10.0
+#### stable version 0.12.2
 
 Check the [npm repostory](https://www.npmjs.com/package/nem-library) for the latest updates
 
@@ -28,7 +28,7 @@ to be used, without counting other great benefits that TypeScript provides.
 npm install -g typescript
 ```
 
-**MINIMUM TypeScript version 2.4.X**
+**MINIMUM TypeScript version 2.5.X**
 
 ![TypeScript Superset](img/typescript-superset.png)
 
@@ -36,7 +36,7 @@ npm install -g typescript
 
 | Platform | Version |
 | ---      | ---     |
-| [TypeScript][TS-lang] | \>= 2.4.0
+| [TypeScript][TS-lang] | \>= 2.5.0
 | [NodeJS][NodeJS] | \>= 6.11.1 (but 8.x.x is recommended)|
 | [Angular][Angular] | \>= 4.2 |
 | [Ionic][Ionic] | \>= 4.0 |
