@@ -7,7 +7,7 @@ for creating Blockchain applications.
 
 [Source Code Repository on GitHub](https://github.com/aleixmorgadas/nem-library-ts)
 
-#### stable version 0.12.2
+#### stable version 1.0.0
 
 Check the [npm repostory](https://www.npmjs.com/package/nem-library) for the latest updates
 
