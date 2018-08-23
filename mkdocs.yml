@@ -35,5 +35,3 @@ theme: readthedocs
 repo_url: https://github.com/aleixmorgadas/nem-library-docs/
 site_url: https://nemlibrary.com
 site_description: NEM Library Documentation for NEM Blockchain.
-google_analytics: ['UA-83164077-5', 'nemlibrary.com']
-
