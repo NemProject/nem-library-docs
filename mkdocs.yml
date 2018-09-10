@@ -31,10 +31,17 @@ pages:
   - Support: 'support.md'
   - Internal Development Process: 'internal_development_process.md'
   - About: 'about.md'
-theme: readthedocs
+theme:
+    name: readthedocs
+    highlightjs: true
+    hljs_languages:
+        - yaml
+        - typescript
+        - json
 repo_url: https://github.com/aleixmorgadas/nem-library-docs/
 site_url: https://nemlibrary.com
 site_description: NEM Library Documentation for NEM Blockchain.
+extra_css: [extra.css]
 markdown_extensions:
   - pymdownx.arithmatex
   - pymdownx.betterem:

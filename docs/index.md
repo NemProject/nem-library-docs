@@ -1,7 +1,6 @@
 # Introduction
 
-NEM Library is an abstraction for [NEM Blockchain][NEM-official] using a [Reactive](https://en.wikipedia.org/wiki/Reactive_programming) approach
-for creating Blockchain applications.
+NEM Library is a layer on top of [NEM Blockchain][NEM-official] to handle the inner complexity and help creating robust NEM Applications.
 
 ![NEM Logo](img/Nem-Logomark.png)
 
@@ -17,12 +16,9 @@ Check the [npm repostory](https://www.npmjs.com/package/nem-library) for the lat
 npm install nem-library rxjs@5 --save
 ```
 
-NEM Library is build with [TypeScript Language][TS-lang], so be sure that you have 
-the latest version installed.
+NEM Library is build with [TypeScript Language][TS-lang], so be sure that you have the latest version installed.
 
-We recommend to use TypeScript instead of JavaScript for building applications for 
-[NEM Blockchain][NEM-official] due the type  system and how the nem-library is meant 
-to be used, without counting other great benefits that TypeScript provides.
+We recommend to use TypeScript instead of JavaScript for building applications for [NEM Blockchain][NEM-official] due the type  system and how the nem-library is meant to be used, without counting other great benefits that TypeScript provides.
 
 ```sh
 npm install -g typescript
