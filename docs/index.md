@@ -7,14 +7,14 @@ for creating Blockchain applications.
 
 [Source Code Repository on GitHub](https://github.com/aleixmorgadas/nem-library-ts)
 
-#### stable version 1.0.0
+#### stable version 1.1.0
 
 Check the [npm repostory](https://www.npmjs.com/package/nem-library) for the latest updates
 
 ## Installation
 
 ```sh
-npm install nem-library rxjs --save
+npm install nem-library rxjs@5 --save
 ```
 
 NEM Library is build with [TypeScript Language][TS-lang], so be sure that you have 
@@ -77,6 +77,10 @@ IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 ## Changelog
+
+## 1.0.0
+
+NEM Library version promoted into stable version.
 
 ### 0.10.0
 

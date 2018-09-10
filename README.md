@@ -10,7 +10,7 @@ View the documentation [here](https://nemlibrary.com).
 Install mkdocs
 
 ```sh
-pip install mkdocs
+pip install mkdocs pymdown-extensions
 ```
 
 Run mkdocs on server mode
