@@ -1,5 +1,5 @@
 site_name: NEM Library
-pages:
+nav:
   - Home: 'index.md'
   - Documentation:
     - 'documentation/architecture.md'
@@ -9,7 +9,6 @@ pages:
     - 'documentation/transaction.md'
     - 'documentation/namespace.md'
     - 'documentation/mosaic.md'
-    - 'documentation/custom_mosaics.md'
     - 'documentation/node.md'
     - 'documentation/blockchain.md'
     - 'documentation/listener.md'
