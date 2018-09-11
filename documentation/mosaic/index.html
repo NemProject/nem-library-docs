@@ -8,23 +8,28 @@
   
   
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>Mosaic - NEM Library</title>
+  <title>Mosaic related requests - NEM Library</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
-  <link rel="stylesheet" href="../../css/highlight.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  <link href="../../extra.css" rel="stylesheet">
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Mosaic";
+    var mkdocs_page_name = "Mosaic related requests";
     var mkdocs_page_input_path = "documentation/mosaic.md";
     var mkdocs_page_url = "/documentation/mosaic/";
   </script>
   
-  <script src="../../js/jquery-2.1.1.min.js"></script>
-  <script src="../../js/modernizr-2.8.3.min.js"></script>
-  <script type="text/javascript" src="../../js/highlight.pack.js"></script> 
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/typescript.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/json.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
   
 </head>
 
@@ -38,7 +43,7 @@
         <a href="../.." class="icon icon-home"> NEM Library</a>
         <div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
   </form>
 </div>
       </div>
@@ -62,27 +67,27 @@
                 </li>
                 <li class="">
                     
-    <a class="" href="../overview/">Overview</a>
+    <a class="" href="../overview/">Installation</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../connection_pool/">Connection pool</a>
+    <a class="" href="../connection_pool/">Connection Pool</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../account/">Account</a>
+    <a class="" href="../account/">Account related requests</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../transaction/">Transaction</a>
+    <a class="" href="../transaction/">Initiating transactions requests</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../namespace/">Namespace</a>
+    <a class="" href="../namespace/">Namespace related requests</a>
                 </li>
                 <li class=" current">
                     
-    <a class="current" href="./">Mosaic</a>
+    <a class="current" href="./">Mosaic related requests</a>
     <ul class="subnav">
             
     <li class="toctree-l3"><a href="#mosaic-related-requests">Mosaic related requests</a></li>
@@ -117,31 +122,27 @@
                 </li>
                 <li class="">
                     
-    <a class="" href="../custom_mosaics/">Custom mosaics</a>
+    <a class="" href="../node/">Node related requests</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../node/">Node</a>
+    <a class="" href="../blockchain/">Blockchain related requests</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../blockchain/">Blockchain</a>
+    <a class="" href="../listener/">Listeners</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../listener/">Listener</a>
+    <a class="" href="../wallet/">Wallets</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../wallet/">Wallet</a>
+    <a class="" href="../service/">AccountOwnedMosaicsService</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../service/">Service</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../error/">Error</a>
+    <a class="" href="../error/">Errors</a>
                 </li>
     </ul>
 	    </li>
@@ -152,7 +153,7 @@
     <ul class="subnav">
                 <li class="">
                     
-    <a class="" href="../../guide/overview/">Overview</a>
+    <a class="" href="../../guide/overview/">Working examples</a>
                 </li>
                 <li class="">
                     
@@ -187,6 +188,11 @@
     <a class="" href="../../guide/wallet/">Wallet</a>
                 </li>
     </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../more_software/">More Software</a>
 	    </li>
           
             <li class="toctree-l1">
@@ -230,7 +236,7 @@
         
       
     
-    <li>Mosaic</li>
+    <li>Mosaic related requests</li>
     <li class="wy-breadcrumbs-aside">
       
         <a href="https://github.com/aleixmorgadas/nem-library-docs/edit/master/docs/documentation/mosaic.md"
@@ -247,7 +253,7 @@
 <p>NEM mosaics are assets that expose additional properties and other features. Each mosaic has an underlying mosaic definition. To be able to create a mosaic definition, an account must rent at least one root namespace which the mosaic definition can then refer to.</p>
 <p><a href="https://bob.nem.ninja/docs/#mosaics">Official Source</a></p>
 <h1 id="mosaichttp-definition">MosaicHttp definition</h1>
-<pre><code class="typescript">export declare class MosaicHttp extends HttpEndpoint {
+<pre class="highlight"><code class="language-typescript">export declare class MosaicHttp extends HttpEndpoint {
     constructor(nodes?: ServerConfig[]);
 
     /**
@@ -274,11 +280,10 @@
      */
     getMosaicTransferableWithAmount(mosaicId: MosaicId, amount: number): Observable&lt;MosaicTransferable&gt;;
 }
-
 </code></pre>
 
 <h1 id="mosaichttp-usage">MosaicHttp usage</h1>
-<pre><code class="typescript">import {MosaicHttp, NEMLibrary, NetworkTypes} from &quot;nem-library&quot;;
+<pre class="highlight"><code class="language-typescript">import {MosaicHttp, NEMLibrary, NetworkTypes} from &quot;nem-library&quot;;
 
 // Initialize NEMLibrary for TEST_NET Network
 NEMLibrary.bootstrap(NetworkTypes.TEST_NET);
@@ -288,11 +293,10 @@ const namespace = &quot;server&quot;;
 
 mosaicHttp.getAllMosaicsGivenNamespace(namespace).subscribe(mosaicDefinitions =&gt; {
     console.log(mosaicDefinitions);
-});
-</code></pre>
+});</code></pre>
 
 <p>Output</p>
-<pre><code>[ MosaicDefinition {
+<pre class="highlight"><code>[ MosaicDefinition {
     creator:
      PublicAccount {
        address: [Object],
@@ -336,13 +340,12 @@ mosaicHttp.getAllMosaicsGivenNamespace(namespace).subscribe(mosaicDefinitions =&
        transferable: true,
        divisibility: 0 },
     levy: MosaicLevy { type: 1, recipient: [Object], mosaicId: [Object], fee: 5 },
-    metaId: 384 } ]
-</code></pre>
+    metaId: 384 } ]</code></pre>
 
 <p><a href="https://github.com/aleixmorgadas/nem-library-examples/blob/master/concepts/mosaic/MosaicHttpExample.ts">Run the code</a></p>
 <h1 id="models">Models</h1>
 <h2 id="mosaicid">MosaicId</h2>
-<pre><code class="typescript">/**
+<pre class="highlight"><code class="language-typescript">/**
  * A mosaic id uniquely identifies an underlying mosaic definition.
  */
 export declare class MosaicId {
@@ -372,11 +375,10 @@ export declare class MosaicId {
     description(): string;
 }
 
-
 </code></pre>
 
 <h2 id="mosaic">Mosaic</h2>
-<pre><code class="typescript">/**
+<pre class="highlight"><code class="language-typescript">/**
  * A mosaic describes an instance of a mosaic definition. Mosaics can be transferred by means of a transfer transaction.
  */
 export declare class Mosaic {
@@ -398,11 +400,10 @@ export declare class Mosaic {
      */
     constructor(mosaicId: MosaicId, quantity: number);
 }
-
 </code></pre>
 
 <h2 id="mosaicdefinition">MosaicDefinition</h2>
-<pre><code class="typescript">
+<pre class="highlight"><code class="language-typescript">
 /**
  * A mosaic definition describes an asset class. Some fields are mandatory while others are optional.
  * The properties of a mosaic definition always have a default value and only need to be supplied if they differ from the default value.
@@ -495,11 +496,10 @@ export declare class MosaicProperties {
      * @param transferable
      */
     constructor(divisibility?: number, initialSupply?: number, transferable?: boolean, supplyMutable?: boolean);
-}
-</code></pre>
+}</code></pre>
 
 <h2 id="mosaiclevy">MosaicLevy</h2>
-<pre><code class="typescript">
+<pre class="highlight"><code class="language-typescript">
 export declare enum MosaicLevyType {
     Absolute = 1,
     Percentil = 2,
@@ -538,11 +538,10 @@ export declare class MosaicLevy {
      * @param fee
      */
     constructor(type: MosaicLevyType, recipient: Address, mosaicId: MosaicId, fee: number);
-}
-</code></pre>
+}</code></pre>
 
 <h2 id="mosaictransferable">MosaicTransferable</h2>
-<pre><code class="typescript">
+<pre class="highlight"><code class="language-typescript">
 /**
  * Mosaic transferable model
  */
@@ -584,11 +583,10 @@ export declare class MosaicTransferable {
      * @returns {MosaicTransferable}
      */
     static createWithMosaicDefinition(mosaicDefinition: MosaicDefinition, quantity: number): MosaicTransferable;
-}
-</code></pre>
+}</code></pre>
 
 <h2 id="xem">XEM</h2>
-<pre><code class="typescript">/**
+<pre class="highlight"><code class="language-typescript">/**
  * XEM mosaic transferable
  */
 export declare class XEM extends MosaicTransferable {
@@ -624,8 +622,7 @@ export declare class XEM extends MosaicTransferable {
     constructor(amount: number) {
         super(new MosaicId(&quot;nem&quot;, &quot;xem&quot;), new MosaicProperties(6, 8999999999, true, false), amount);
     }
-}
-</code></pre>
+}</code></pre>
               
             </div>
           </div>
@@ -633,10 +630,10 @@ export declare class XEM extends MosaicTransferable {
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../custom_mosaics/" class="btn btn-neutral float-right" title="Custom mosaics">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../node/" class="btn btn-neutral float-right" title="Node related requests">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../namespace/" class="btn btn-neutral" title="Namespace"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../namespace/" class="btn btn-neutral" title="Namespace related requests"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -650,12 +647,12 @@ export declare class XEM extends MosaicTransferable {
 
   Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
 </footer>
-	  
+      
         </div>
       </div>
 
     </section>
-    
+
   </div>
 
   <div class="rst-versions" role="note" style="cursor: pointer">
@@ -667,11 +664,13 @@ export declare class XEM extends MosaicTransferable {
         <span><a href="../namespace/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../custom_mosaics/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../node/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
-    <script src="../../js/theme.js"></script>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
 
 </body>
 </html>

@@ -8,23 +8,28 @@
   
   
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>Overview - NEM Library</title>
+  <title>Working examples - NEM Library</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
-  <link rel="stylesheet" href="../../css/highlight.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  <link href="../../extra.css" rel="stylesheet">
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Overview";
+    var mkdocs_page_name = "Working examples";
     var mkdocs_page_input_path = "guide/overview.md";
     var mkdocs_page_url = "/guide/overview/";
   </script>
   
-  <script src="../../js/jquery-2.1.1.min.js"></script>
-  <script src="../../js/modernizr-2.8.3.min.js"></script>
-  <script type="text/javascript" src="../../js/highlight.pack.js"></script> 
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/typescript.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/json.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
   
 </head>
 
@@ -38,7 +43,7 @@
         <a href="../.." class="icon icon-home"> NEM Library</a>
         <div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
   </form>
 </div>
       </div>
@@ -62,55 +67,51 @@
                 </li>
                 <li class="">
                     
-    <a class="" href="../../documentation/overview/">Overview</a>
+    <a class="" href="../../documentation/overview/">Installation</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../documentation/connection_pool/">Connection pool</a>
+    <a class="" href="../../documentation/connection_pool/">Connection Pool</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../documentation/account/">Account</a>
+    <a class="" href="../../documentation/account/">Account related requests</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../documentation/transaction/">Transaction</a>
+    <a class="" href="../../documentation/transaction/">Initiating transactions requests</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../documentation/namespace/">Namespace</a>
+    <a class="" href="../../documentation/namespace/">Namespace related requests</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../documentation/mosaic/">Mosaic</a>
+    <a class="" href="../../documentation/mosaic/">Mosaic related requests</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../documentation/custom_mosaics/">Custom mosaics</a>
+    <a class="" href="../../documentation/node/">Node related requests</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../documentation/node/">Node</a>
+    <a class="" href="../../documentation/blockchain/">Blockchain related requests</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../documentation/blockchain/">Blockchain</a>
+    <a class="" href="../../documentation/listener/">Listeners</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../documentation/listener/">Listener</a>
+    <a class="" href="../../documentation/wallet/">Wallets</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../documentation/wallet/">Wallet</a>
+    <a class="" href="../../documentation/service/">AccountOwnedMosaicsService</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../documentation/service/">Service</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../../documentation/error/">Error</a>
+    <a class="" href="../../documentation/error/">Errors</a>
                 </li>
     </ul>
 	    </li>
@@ -121,7 +122,7 @@
     <ul class="subnav">
                 <li class=" current">
                     
-    <a class="current" href="./">Overview</a>
+    <a class="current" href="./">Working examples</a>
     <ul class="subnav">
             
     <li class="toctree-l3"><a href="#working-examples">Working examples</a></li>
@@ -172,6 +173,11 @@
           
             <li class="toctree-l1">
 		
+    <a class="" href="../../more_software/">More Software</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
     <a class="" href="../../support/">Support</a>
 	    </li>
           
@@ -211,7 +217,7 @@
         
       
     
-    <li>Overview</li>
+    <li>Working examples</li>
     <li class="wy-breadcrumbs-aside">
       
         <a href="https://github.com/aleixmorgadas/nem-library-docs/edit/master/docs/guide/overview.md"
@@ -241,7 +247,7 @@ once the deadline of the TimeWindow is after the Node timestamp, the transaction
         <a href="../account/" class="btn btn-neutral float-right" title="Account">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../../documentation/error/" class="btn btn-neutral" title="Error"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../documentation/error/" class="btn btn-neutral" title="Errors"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -255,12 +261,12 @@ once the deadline of the TimeWindow is after the Node timestamp, the transaction
 
   Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
 </footer>
-	  
+      
         </div>
       </div>
 
     </section>
-    
+
   </div>
 
   <div class="rst-versions" role="note" style="cursor: pointer">
@@ -276,7 +282,9 @@ once the deadline of the TimeWindow is after the Node timestamp, the transaction
       
     </span>
 </div>
-    <script src="../../js/theme.js"></script>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
 
 </body>
 </html>

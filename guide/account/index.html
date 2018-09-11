@@ -13,7 +13,8 @@
 
   <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
-  <link rel="stylesheet" href="../../css/highlight.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  <link href="../../extra.css" rel="stylesheet">
   
   <script>
     // Current page data
@@ -22,9 +23,13 @@
     var mkdocs_page_url = "/guide/account/";
   </script>
   
-  <script src="../../js/jquery-2.1.1.min.js"></script>
-  <script src="../../js/modernizr-2.8.3.min.js"></script>
-  <script type="text/javascript" src="../../js/highlight.pack.js"></script> 
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/typescript.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/json.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
   
 </head>
 
@@ -38,7 +43,7 @@
         <a href="../.." class="icon icon-home"> NEM Library</a>
         <div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
   </form>
 </div>
       </div>
@@ -62,55 +67,51 @@
                 </li>
                 <li class="">
                     
-    <a class="" href="../../documentation/overview/">Overview</a>
+    <a class="" href="../../documentation/overview/">Installation</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../documentation/connection_pool/">Connection pool</a>
+    <a class="" href="../../documentation/connection_pool/">Connection Pool</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../documentation/account/">Account</a>
+    <a class="" href="../../documentation/account/">Account related requests</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../documentation/transaction/">Transaction</a>
+    <a class="" href="../../documentation/transaction/">Initiating transactions requests</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../documentation/namespace/">Namespace</a>
+    <a class="" href="../../documentation/namespace/">Namespace related requests</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../documentation/mosaic/">Mosaic</a>
+    <a class="" href="../../documentation/mosaic/">Mosaic related requests</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../documentation/custom_mosaics/">Custom mosaics</a>
+    <a class="" href="../../documentation/node/">Node related requests</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../documentation/node/">Node</a>
+    <a class="" href="../../documentation/blockchain/">Blockchain related requests</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../documentation/blockchain/">Blockchain</a>
+    <a class="" href="../../documentation/listener/">Listeners</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../documentation/listener/">Listener</a>
+    <a class="" href="../../documentation/wallet/">Wallets</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../documentation/wallet/">Wallet</a>
+    <a class="" href="../../documentation/service/">AccountOwnedMosaicsService</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../documentation/service/">Service</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../../documentation/error/">Error</a>
+    <a class="" href="../../documentation/error/">Errors</a>
                 </li>
     </ul>
 	    </li>
@@ -121,7 +122,7 @@
     <ul class="subnav">
                 <li class="">
                     
-    <a class="" href="../overview/">Overview</a>
+    <a class="" href="../overview/">Working examples</a>
                 </li>
                 <li class=" current">
                     
@@ -193,6 +194,11 @@
           
             <li class="toctree-l1">
 		
+    <a class="" href="../../more_software/">More Software</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
     <a class="" href="../../support/">Support</a>
 	    </li>
           
@@ -246,7 +252,7 @@
             <div class="section">
               
                 <h3 id="how-to-receive-all-transactions-for-an-account">How to receive all transactions for an account</h3>
-<pre><code class="typescript">import {AccountHttp, Address, NEMLibrary, NetworkTypes} from &quot;nem-library&quot;;
+<pre class="highlight"><code class="language-typescript">import {AccountHttp, Address, NEMLibrary, NetworkTypes} from &quot;nem-library&quot;;
 
 NEMLibrary.bootstrap(NetworkTypes.TEST_NET);
 
@@ -255,12 +261,11 @@ const accountHttp = new AccountHttp();
 accountHttp.allTransactions(new Address(&quot;TCFFOM-Q2SBX7-7E2FZC-3VX43Z-TRV4ZN-TXTCGW-BM5J&quot;))
     .subscribe(allTransactions =&gt; {
        console.log(allTransactions);
-    });
-</code></pre>
+    });</code></pre>
 
 <p><a href="https://github.com/aleixmorgadas/nem-library-examples/blob/master/howto/account/How_to_receive_the_transactions_for_an_account.ts">Source code</a></p>
 <h3 id="how-to-receive-all-transactions-for-an-account-paginated"><a name='alltransactionspaginated'></a> How to receive all transactions for an account paginated</h3>
-<pre><code class="typescript">/**
+<pre class="highlight"><code class="language-typescript">/**
  * nem-library 0.3.0
  */
 
@@ -276,12 +281,11 @@ pageable.subscribe(transactions =&gt; {
     // do something with the info
 });
 
-pageable.nextPage(); // Fetch the nexts 25 transactions
-</code></pre>
+pageable.nextPage(); // Fetch the nexts 25 transactions</code></pre>
 
 <p><a href="https://github.com/aleixmorgadas/nem-library-examples/blob/master/howto/account/How_to_do_pagination_in_transactions_methods.ts">Source code</a></p>
 <h3 id="how-to-receive-incoming-transactions-for-an-account">How to receive incoming transactions for an account</h3>
-<pre><code class="typescript">import {AccountHttp, Address, NEMLibrary, NetworkTypes} from &quot;nem-library&quot;;
+<pre class="highlight"><code class="language-typescript">import {AccountHttp, Address, NEMLibrary, NetworkTypes} from &quot;nem-library&quot;;
 
 NEMLibrary.bootstrap(NetworkTypes.TEST_NET);
 
@@ -290,12 +294,11 @@ const accountHttp = new AccountHttp();
 accountHttp.incomingTransactions(new Address(&quot;TCFFOM-Q2SBX7-7E2FZC-3VX43Z-TRV4ZN-TXTCGW-BM5J&quot;))
     .subscribe(x =&gt; {
         console.log(x);
-    });
-</code></pre>
+    });</code></pre>
 
 <p><a href="https://github.com/aleixmorgadas/nem-library-examples/blob/master/howto/account/How_to_receive_incoming_transactions_for_an_account.ts">Source code</a></p>
 <h3 id="how-to-receive-outgoing-transactions-for-an-account">How to receive outgoing transactions for an account</h3>
-<pre><code class="typescript">import {AccountHttp, Address, NEMLibrary, NetworkTypes} from &quot;nem-library&quot;;
+<pre class="highlight"><code class="language-typescript">import {AccountHttp, Address, NEMLibrary, NetworkTypes} from &quot;nem-library&quot;;
 
 NEMLibrary.bootstrap(NetworkTypes.TEST_NET);
 
@@ -304,12 +307,11 @@ const accountHttp = new AccountHttp();
 accountHttp.outgoingTransactions(new Address(&quot;TCFFOM-Q2SBX7-7E2FZC-3VX43Z-TRV4ZN-TXTCGW-BM5J&quot;))
     .subscribe(x =&gt; {
         console.log(x);
-    });
-</code></pre>
+    });</code></pre>
 
 <p><a href="https://github.com/aleixmorgadas/nem-library-examples/blob/master/howto/account/How_to_receive_outgoing_transactions_for_an_account.ts">Source code</a></p>
 <h3 id="how-to-get-the-unconfirmed-transactions-for-an-account">How to get the unconfirmed transactions for an account</h3>
-<pre><code class="typescript">import {AccountHttp, Address, NEMLibrary, NetworkTypes} from &quot;nem-library&quot;;
+<pre class="highlight"><code class="language-typescript">import {AccountHttp, Address, NEMLibrary, NetworkTypes} from &quot;nem-library&quot;;
 
 NEMLibrary.bootstrap(NetworkTypes.TEST_NET);
 
@@ -318,12 +320,11 @@ const accountHttp = new AccountHttp();
 accountHttp.unconfirmedTransactions(new Address(&quot;TCFFOM-Q2SBX7-7E2FZC-3VX43Z-TRV4ZN-TXTCGW-BM5J&quot;))
     .subscribe(x =&gt; {
         console.log(x);
-    });
-</code></pre>
+    });</code></pre>
 
 <p><a href="https://github.com/aleixmorgadas/nem-library-examples/blob/master/howto/account/How_to_get_the_unconfirmed_transactions_for_an_account.ts">Source code</a></p>
 <h3 id="how-to-get-account-harvested-blocks-info-paginated">How to get Account harvested blocks info paginated</h3>
-<pre><code class="typescript">import {AccountHttp, Address, NEMLibrary, NetworkTypes} from &quot;nem-library&quot;;
+<pre class="highlight"><code class="language-typescript">import {AccountHttp, Address, NEMLibrary, NetworkTypes} from &quot;nem-library&quot;;
 
 NEMLibrary.bootstrap(NetworkTypes.TEST_NET);
 
@@ -332,12 +333,11 @@ const accountHttp = new AccountHttp();
 accountHttp.getAccountImportances()
     .subscribe(x =&gt; {
         console.log(x);
-    });
-</code></pre>
+    });</code></pre>
 
 <p><a href="https://github.com/aleixmorgadas/nem-library-examples/blob/master/howto/account/How_to_do_pagination_in_account_harvests.ts">Source code</a></p>
 <h3 id="how-to-get-account-importances">How to get Account Importances</h3>
-<pre><code class="typescript">import {AccountHttp, Address, NEMLibrary, NetworkTypes} from &quot;nem-library&quot;;
+<pre class="highlight"><code class="language-typescript">import {AccountHttp, Address, NEMLibrary, NetworkTypes} from &quot;nem-library&quot;;
 
 NEMLibrary.bootstrap(NetworkTypes.TEST_NET);
 
@@ -346,12 +346,11 @@ const accountHttp = new AccountHttp();
 accountHttp.getAccountImportances()
     .subscribe(x =&gt; {
         console.log(x);
-    });
-</code></pre>
+    });</code></pre>
 
 <p><a href="https://github.com/aleixmorgadas/nem-library-examples/blob/master/howto/account/How_to_get_Account_Importances.ts">Source code</a></p>
 <h3 id="how-to-convert-a-normal-account-into-multisig-account">How to convert a Normal Account into Multisig Account</h3>
-<pre><code class="typescript">import {
+<pre class="highlight"><code class="language-typescript">import {
     AccountHttp, NEMLibrary, NetworkTypes, Address, Account, TransferTransaction, TimeWindow,
     EmptyMessage, MultisigTransaction, PublicAccount, TransactionHttp, XEM, MultisigAggregateModificationTransaction,
     CosignatoryModification, CosignatoryModificationAction
@@ -384,12 +383,11 @@ const convertIntoMultisigTransaction = MultisigAggregateModificationTransaction.
 
 const signedTransaction = account.signTransaction(convertIntoMultisigTransaction);
 
-transactionHttp.announceTransaction(signedTransaction).subscribe(x =&gt; console.log(x));
-</code></pre>
+transactionHttp.announceTransaction(signedTransaction).subscribe(x =&gt; console.log(x));</code></pre>
 
 <p><a href="https://github.com/aleixmorgadas/nem-library-examples/blob/master/howto/account/How_to_convert_a_Normal_Account_into_Multisig_Account.ts">Source code</a></p>
 <h3 id="how-to-enable-harvesting">How to enable harvesting</h3>
-<pre><code class="typescript">import {
+<pre class="highlight"><code class="language-typescript">import {
     NEMLibrary, NetworkTypes, Account, TimeWindow,
     PublicAccount, TransactionHttp, ImportanceMode, ImportanceTransferTransaction, AccountHttp
 } from &quot;nem-library&quot;;
@@ -423,13 +421,12 @@ const accountHttp = new AccountHttp();
 const supernodeDomain = &quot;188.68.50.161&quot;;
 
 accountHttp.unlockHarvesting(supernodeDomain, delegateAccountHarvestingPrivateKey).subscribe(success =&gt; console.log(success));
-
 </code></pre>
 
 <p><a href="https://github.com/aleixmorgadas/nem-library-examples/blob/master/howto/account/How_to_enable_harvesting.ts">Source code</a></p>
 <h3 id="how-receive-all-transactions">How receive all transactions</h3>
 <p>The sample shows how to fetch all the transactions for an account, emulating a loop or a recursive function.</p>
-<pre><code class="typescript">import {AccountHttp, Address, NEMLibrary, NetworkTypes} from &quot;nem-library&quot;;
+<pre class="highlight"><code class="language-typescript">import {AccountHttp, Address, NEMLibrary, NetworkTypes} from &quot;nem-library&quot;;
 
 NEMLibrary.bootstrap(NetworkTypes.TEST_NET);
 
@@ -447,12 +444,11 @@ pagedTransactions.subscribe(x =&gt; {
 }, () =&gt; {
     // when this lambda is called, it means all transactions have been fetched
     console.log(&quot;complete&quot;);
-});
-</code></pre>
+});</code></pre>
 
 <p><a href="https://github.com/aleixmorgadas/nem-library-examples/blob/master/howto/account/How_to_fetch_all_transactions_for_an_account.ts">Source code</a></p>
 <h3 id="how-to-sign-unconfirmed-multisig-transactions">How to sign unconfirmed multisig transactions</h3>
-<pre><code class="typescript">/**
+<pre class="highlight"><code class="language-typescript">/**
  * nem-library 0.3.7
  */
 
@@ -485,8 +481,7 @@ accountHttp.unconfirmedTransactions(account.address)
     }, err =&gt; {
         // Know if something has gone wrong
         console.error(err)
-    });
-</code></pre>
+    });</code></pre>
 
 <p><a href="https://github.com/aleixmorgadas/nem-library-examples/blob/master/howto/account/How_to_sign_all_multisig_transactions.ts">Source code</a></p>
               
@@ -499,7 +494,7 @@ accountHttp.unconfirmedTransactions(account.address)
         <a href="../transaction/" class="btn btn-neutral float-right" title="Transaction">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../overview/" class="btn btn-neutral" title="Overview"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../overview/" class="btn btn-neutral" title="Working examples"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -513,12 +508,12 @@ accountHttp.unconfirmedTransactions(account.address)
 
   Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
 </footer>
-	  
+      
         </div>
       </div>
 
     </section>
-    
+
   </div>
 
   <div class="rst-versions" role="note" style="cursor: pointer">
@@ -534,7 +529,9 @@ accountHttp.unconfirmedTransactions(account.address)
       
     </span>
 </div>
-    <script src="../../js/theme.js"></script>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
 
 </body>
 </html>

@@ -8,23 +8,28 @@
   
   
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>Transaction - NEM Library</title>
+  <title>Initiating transactions requests - NEM Library</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
-  <link rel="stylesheet" href="../../css/highlight.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  <link href="../../extra.css" rel="stylesheet">
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Transaction";
+    var mkdocs_page_name = "Initiating transactions requests";
     var mkdocs_page_input_path = "documentation/transaction.md";
     var mkdocs_page_url = "/documentation/transaction/";
   </script>
   
-  <script src="../../js/jquery-2.1.1.min.js"></script>
-  <script src="../../js/modernizr-2.8.3.min.js"></script>
-  <script type="text/javascript" src="../../js/highlight.pack.js"></script> 
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/typescript.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/json.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
   
 </head>
 
@@ -38,7 +43,7 @@
         <a href="../.." class="icon icon-home"> NEM Library</a>
         <div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
   </form>
 </div>
       </div>
@@ -62,19 +67,19 @@
                 </li>
                 <li class="">
                     
-    <a class="" href="../overview/">Overview</a>
+    <a class="" href="../overview/">Installation</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../connection_pool/">Connection pool</a>
+    <a class="" href="../connection_pool/">Connection Pool</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../account/">Account</a>
+    <a class="" href="../account/">Account related requests</a>
                 </li>
                 <li class=" current">
                     
-    <a class="current" href="./">Transaction</a>
+    <a class="current" href="./">Initiating transactions requests</a>
     <ul class="subnav">
             
     <li class="toctree-l3"><a href="#initiating-transactions-requests">Initiating transactions requests</a></li>
@@ -131,39 +136,35 @@
                 </li>
                 <li class="">
                     
-    <a class="" href="../namespace/">Namespace</a>
+    <a class="" href="../namespace/">Namespace related requests</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../mosaic/">Mosaic</a>
+    <a class="" href="../mosaic/">Mosaic related requests</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../custom_mosaics/">Custom mosaics</a>
+    <a class="" href="../node/">Node related requests</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../node/">Node</a>
+    <a class="" href="../blockchain/">Blockchain related requests</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../blockchain/">Blockchain</a>
+    <a class="" href="../listener/">Listeners</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../listener/">Listener</a>
+    <a class="" href="../wallet/">Wallets</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../wallet/">Wallet</a>
+    <a class="" href="../service/">AccountOwnedMosaicsService</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../service/">Service</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../error/">Error</a>
+    <a class="" href="../error/">Errors</a>
                 </li>
     </ul>
 	    </li>
@@ -174,7 +175,7 @@
     <ul class="subnav">
                 <li class="">
                     
-    <a class="" href="../../guide/overview/">Overview</a>
+    <a class="" href="../../guide/overview/">Working examples</a>
                 </li>
                 <li class="">
                     
@@ -209,6 +210,11 @@
     <a class="" href="../../guide/wallet/">Wallet</a>
                 </li>
     </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../more_software/">More Software</a>
 	    </li>
           
             <li class="toctree-l1">
@@ -252,7 +258,7 @@
         
       
     
-    <li>Transaction</li>
+    <li>Initiating transactions requests</li>
     <li class="wy-breadcrumbs-aside">
       
         <a href="https://github.com/aleixmorgadas/nem-library-docs/edit/master/docs/documentation/transaction.md"
@@ -270,7 +276,7 @@
 <p>Cryptocurrencies have the ability to roll back part of the blockchain. This is essential for being able to resolve forks of the blockchain. There is, however, a maximum number of blocks that can be rolled back, which is called the "rewrite limit". Hence, forks can only be resolved up to a certain depth too. NEM has a rewrite limit of 360 blocks. Once a transaction has more than 360 confirmations, it cannot be reversed. In real life, forks that are deeper than 20 blocks do not happen, unless there was some severe problem with the blockchain due to a bug in the code or an attack of some kind.</p>
 <p><a href="https://bob.nem.ninja/docs/#initiating-transactions">Official Source</a></p>
 <h1 id="transactionhttp-definition">TransactionHttp definition</h1>
-<pre><code class="typescript">export declare class TransactionHttp extends HttpEndpoint {
+<pre class="highlight"><code class="language-typescript">export declare class TransactionHttp extends HttpEndpoint {
     constructor(nodes?: ServerConfig[]);
 
     /**
@@ -286,11 +292,10 @@
     * @returns Observable&lt;Transaction&gt;
     */
     getByHash(hash: string): Observable&lt;Transaction&gt;;
-}
-</code></pre>
+}</code></pre>
 
 <h1 id="transactionhttp-usage">TransactionHttp usage</h1>
-<pre><code class="typescript">import {
+<pre class="highlight"><code class="language-typescript">import {
     AccountHttp, NEMLibrary, NetworkTypes, Address, Account, TransferTransaction, TimeWindow,
     EmptyMessage, MultisigTransaction, PublicAccount, TransactionHttp, SignedTransaction
 } from &quot;nem-library&quot;;
@@ -322,24 +327,22 @@ const transactionHttp = new TransactionHttp();
 
 const signedTransaction: SignedTransaction = cosignerAccount.signTransaction(multisigTransaction);
 
-transactionHttp.announceTransaction(signedTransaction).subscribe( x =&gt; console.log(x));
-</code></pre>
+transactionHttp.announceTransaction(signedTransaction).subscribe( x =&gt; console.log(x));</code></pre>
 
 <p>Output</p>
-<pre><code>
+<pre class="highlight"><code>
 NemAnnounceResult {
   type: 1,
   code: 1,
   message: 'SUCCESS',
   transactionHash: { data: '56b4d3e38cb5b707d4b96776116396c2885fd09be6945637f5657204528001b7' },
   innerTransactionHash: { data: 'a61ce8d0df9aac98ae68e7d88a2f2bb453deb202fd95cf3cf375fde35e4e6794' } }
-
 </code></pre>
 
 <p><a href="https://github.com/aleixmorgadas/nem-library-examples/blob/master/concepts/transaction/TrasactionHttpExample.ts">Run the code</a></p>
 <h1 id="models">Models</h1>
 <h2 id="timewindow">TimeWindow</h2>
-<pre><code class="typescript">export declare class TimeWindow {
+<pre class="highlight"><code class="language-typescript">export declare class TimeWindow {
     static timestampNemesisBlock: number;
 
     /**
@@ -360,11 +363,10 @@ NemAnnounceResult {
      */
     static createWithDeadline(deadline?: number, chronoUnit?: ChronoUnit): TimeWindow;
 }
-
 </code></pre>
 
 <h2 id="transactioninfo">TransactionInfo</h2>
-<pre><code class="typescript">export declare class TransactionInfo {
+<pre class="highlight"><code class="language-typescript">export declare class TransactionInfo {
 
     /**
      * The height of the block in which the transaction was included.
@@ -406,11 +408,10 @@ export declare class MultisigTransactionInfo extends TransactionInfo {
      */
     constructor(height: number, id: number, hash: HashData, innerHash: HashData);
 }
-
 </code></pre>
 
 <h2 id="transactiontypes">TransactionTypes</h2>
-<pre><code class="typescript">/**
+<pre class="highlight"><code class="language-typescript">/**
  * Static class containing transaction type constants.
  */
 export declare class TransactionTypes {
@@ -505,11 +506,10 @@ export declare class TransactionTypes {
      */
     static getActiveTypes(): number[];
 }
-
 </code></pre>
 
 <h2 id="transaction">Transaction</h2>
-<pre><code class="typescript">/**
+<pre class="highlight"><code class="language-typescript">/**
  * An abstract transaction class that serves as the base class of all NEM transactions.
  */
 export declare abstract class Transaction {
@@ -559,11 +559,10 @@ export declare abstract class Transaction {
      */
     getTransactionInfo(): TransactionInfo;
 }
-
 </code></pre>
 
 <h2 id="transfertransaction">TransferTransaction</h2>
-<pre><code class="typescript">/**
+<pre class="highlight"><code class="language-typescript">/**
  * Transfer transactions contain data about transfers of XEM or mosaics to another account.
  */
 export declare class TransferTransaction extends Transaction {
@@ -625,11 +624,10 @@ export declare class TransferTransaction extends Transaction {
      * @returns {TransferTransaction}
      */
     static createWithMosaics(timeWindow: TimeWindow, recipient: Address, mosaics: MosaicTransferable[], message: PlainMessage | EncryptedMessage): TransferTransaction;
-}
-</code></pre>
+}</code></pre>
 
 <h2 id="message">Message</h2>
-<pre><code class="typescript">/**
+<pre class="highlight"><code class="language-typescript">/**
  * Message model
  */
 export declare abstract class Message {
@@ -640,11 +638,10 @@ export declare abstract class Message {
     readonly payload: string;
 
 }
-
 </code></pre>
 
 <h2 id="plainmessage">PlainMessage</h2>
-<pre><code class="typescript">/**
+<pre class="highlight"><code class="language-typescript">/**
  * Plain Message model
  */
 export declare class PlainMessage extends Message {
@@ -663,22 +660,20 @@ export declare class PlainMessage extends Message {
 
 }
 export declare const EmptyMessage: PlainMessage;
-
 </code></pre>
 
 <h2 id="encryptedmessage">EncryptedMessage</h2>
-<pre><code class="typescript">/**
+<pre class="highlight"><code class="language-typescript">/**
  * Encrypted Message model
  */
 export declare class EncryptedMessage extends Message {
     readonly recipientPublicAccount?: PublicAccount;
 }
 
-
 </code></pre>
 
 <h2 id="importancetransfertransaction">ImportanceTransferTransaction</h2>
-<pre><code class="typescript">
+<pre class="highlight"><code class="language-typescript">
 export declare enum ImportanceMode {
     Activate = 1,
     Deactivate = 2,
@@ -716,11 +711,10 @@ export declare class ImportanceTransferTransaction extends Transaction {
      */
     static create(timeWindow: TimeWindow, mode: ImportanceMode, remoteAccount: PublicAccount): ImportanceTransferTransaction;
 }
-
 </code></pre>
 
 <h2 id="provisionnamespacetransaction">ProvisionNamespaceTransaction</h2>
-<pre><code class="typescript">/**
+<pre class="highlight"><code class="language-typescript">/**
  * Accounts can rent a namespace for one year and after a year renew the contract. This is done via a ProvisionNamespaceTransaction.
  */
 export declare class ProvisionNamespaceTransaction extends Transaction {
@@ -775,11 +769,10 @@ export declare class ProvisionNamespaceTransaction extends Transaction {
    * @returns {ProvisionNamespaceTransaction}
    */
   static createSub(timeWindow: TimeWindow, parentNamespace: string, newNamespaceName: string): ProvisionNamespaceTransaction;
-}
-</code></pre>
+}</code></pre>
 
 <h2 id="mosaicdefinitioncreationtransaction">MosaicDefinitionCreationTransaction</h2>
-<pre><code class="typescript">/**
+<pre class="highlight"><code class="language-typescript">/**
  * Before a mosaic can be created or transferred, a corresponding definition of the mosaic has to be created and published to the network.
  * This is done via a mosaic definition creation transaction.
  */
@@ -813,11 +806,10 @@ export declare class MosaicDefinitionCreationTransaction extends Transaction {
      */
     static create(timeWindow: TimeWindow, mosaicDefinition: MosaicDefinition): MosaicDefinitionCreationTransaction;
 }
-
 </code></pre>
 
 <h2 id="mosaicsupplychangetransaction">MosaicSupplyChangeTransaction</h2>
-<pre><code class="typescript">export declare enum MosaicSupplyType {
+<pre class="highlight"><code class="language-typescript">export declare enum MosaicSupplyType {
     Increase = 1,
     Decrease = 2,
 }
@@ -857,11 +849,10 @@ export declare class MosaicSupplyChangeTransaction extends Transaction {
      */
     static create(timeWindow: TimeWindow, mosaicId: MosaicId, supplyType: MosaicSupplyType, delta: number): MosaicSupplyChangeTransaction;
 }
-
 </code></pre>
 
 <h2 id="multisigtransaction">MultisigTransaction</h2>
-<pre><code class="typescript">/**
+<pre class="highlight"><code class="language-typescript">/**
  * Multisig transaction are the only way to make transaction from a multisig account to another account.
  * A multisig transaction carries another transaction inside (often referred to as &quot;inner&quot; transaction).
  * The inner transaction can be a transfer, an importance transfer or an aggregate modification transaction.
@@ -905,11 +896,10 @@ export declare class MultisigTransaction extends Transaction {
      */
     static create(timeWindow: TimeWindow, otherTrans: Transaction, multisig: PublicAccount): MultisigTransaction;
 }
-
 </code></pre>
 
 <h2 id="multisigaggregatemodificationtransaction">MultisigAggregateModificationTransaction</h2>
-<pre><code class="typescript">/**
+<pre class="highlight"><code class="language-typescript">/**
  * Multisig aggregate modification transactions are part of the NEM's multisig account system.
  * A multisig aggregate modification transaction holds an array of multisig cosignatory modifications and a single multisig minimum cosignatories modification inside the transaction.
  * A multisig aggregate modification transaction can be wrapped by a multisig transaction.
@@ -962,11 +952,10 @@ export declare class CosignatoryModification {
      */
     constructor(cosignatoryAccount: PublicAccount, action: CosignatoryModificationAction);
 }
-
 </code></pre>
 
 <h2 id="multisigsignaturetransaction">MultisigSignatureTransaction</h2>
-<pre><code class="typescript">/**
+<pre class="highlight"><code class="language-typescript">/**
  * Multisig signature transactions are part of the NEM's multisig account system. Multisig signature transactions are included in the corresponding multisig transaction and are the way a cosignatory of a multisig account can sign a multisig transaction for that account.
  */
 export declare class MultisigSignatureTransaction extends Transaction {
@@ -995,11 +984,10 @@ export declare class MultisigSignatureTransaction extends Transaction {
      */
     static create(timeWindow: TimeWindow, otherAccount: Address, otherHash: HashData): MultisigSignatureTransaction;
 }
-
 </code></pre>
 
 <h2 id="signedtransaction">SignedTransaction</h2>
-<pre><code class="typescript">/**
+<pre class="highlight"><code class="language-typescript">/**
  * SignedTransaction object is used to transfer the transaction data and the signature to NIS in order to initiate and broadcast a transaction.
  */
 export interface SignedTransaction {
@@ -1014,11 +1002,10 @@ export interface SignedTransaction {
      */
     readonly signature: string;
 }
-
 </code></pre>
 
 <h2 id="nemannounceresult">NemAnnounceResult</h2>
-<pre><code class="typescript">
+<pre class="highlight"><code class="language-typescript">
 export declare enum TypeNemAnnounceResult {
     Validation = 1,
     HeartBeat = 2,
@@ -1057,7 +1044,6 @@ export declare class NemAnnounceResult {
      */
     readonly innerTransactionHash: HashData;
 }
-
 </code></pre>
               
             </div>
@@ -1066,10 +1052,10 @@ export declare class NemAnnounceResult {
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../namespace/" class="btn btn-neutral float-right" title="Namespace">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../namespace/" class="btn btn-neutral float-right" title="Namespace related requests">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../account/" class="btn btn-neutral" title="Account"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../account/" class="btn btn-neutral" title="Account related requests"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -1083,12 +1069,12 @@ export declare class NemAnnounceResult {
 
   Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
 </footer>
-	  
+      
         </div>
       </div>
 
     </section>
-    
+
   </div>
 
   <div class="rst-versions" role="note" style="cursor: pointer">
@@ -1104,7 +1090,9 @@ export declare class NemAnnounceResult {
       
     </span>
 </div>
-    <script src="../../js/theme.js"></script>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
 
 </body>
 </html>

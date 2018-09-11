@@ -8,23 +8,28 @@
   
   
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>Overview - NEM Library</title>
+  <title>Installation - NEM Library</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
-  <link rel="stylesheet" href="../../css/highlight.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  <link href="../../extra.css" rel="stylesheet">
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Overview";
+    var mkdocs_page_name = "Installation";
     var mkdocs_page_input_path = "documentation/overview.md";
     var mkdocs_page_url = "/documentation/overview/";
   </script>
   
-  <script src="../../js/jquery-2.1.1.min.js"></script>
-  <script src="../../js/modernizr-2.8.3.min.js"></script>
-  <script type="text/javascript" src="../../js/highlight.pack.js"></script> 
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/typescript.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/json.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
   
 </head>
 
@@ -38,7 +43,7 @@
         <a href="../.." class="icon icon-home"> NEM Library</a>
         <div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
   </form>
 </div>
       </div>
@@ -62,7 +67,7 @@
                 </li>
                 <li class=" current">
                     
-    <a class="current" href="./">Overview</a>
+    <a class="current" href="./">Installation</a>
     <ul class="subnav">
             
     <li class="toctree-l3"><a href="#installation">Installation</a></li>
@@ -75,51 +80,47 @@
                 </li>
                 <li class="">
                     
-    <a class="" href="../connection_pool/">Connection pool</a>
+    <a class="" href="../connection_pool/">Connection Pool</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../account/">Account</a>
+    <a class="" href="../account/">Account related requests</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../transaction/">Transaction</a>
+    <a class="" href="../transaction/">Initiating transactions requests</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../namespace/">Namespace</a>
+    <a class="" href="../namespace/">Namespace related requests</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../mosaic/">Mosaic</a>
+    <a class="" href="../mosaic/">Mosaic related requests</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../custom_mosaics/">Custom mosaics</a>
+    <a class="" href="../node/">Node related requests</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../node/">Node</a>
+    <a class="" href="../blockchain/">Blockchain related requests</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../blockchain/">Blockchain</a>
+    <a class="" href="../listener/">Listeners</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../listener/">Listener</a>
+    <a class="" href="../wallet/">Wallets</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../wallet/">Wallet</a>
+    <a class="" href="../service/">AccountOwnedMosaicsService</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../service/">Service</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../error/">Error</a>
+    <a class="" href="../error/">Errors</a>
                 </li>
     </ul>
 	    </li>
@@ -130,7 +131,7 @@
     <ul class="subnav">
                 <li class="">
                     
-    <a class="" href="../../guide/overview/">Overview</a>
+    <a class="" href="../../guide/overview/">Working examples</a>
                 </li>
                 <li class="">
                     
@@ -165,6 +166,11 @@
     <a class="" href="../../guide/wallet/">Wallet</a>
                 </li>
     </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../more_software/">More Software</a>
 	    </li>
           
             <li class="toctree-l1">
@@ -208,7 +214,7 @@
         
       
     
-    <li>Overview</li>
+    <li>Installation</li>
     <li class="wy-breadcrumbs-aside">
       
         <a href="https://github.com/aleixmorgadas/nem-library-docs/edit/master/docs/documentation/overview.md"
@@ -223,15 +229,13 @@
               
                 <h1 id="installation">Installation</h1>
 <p><strong>Step1</strong>: Add nem-library dependency to <code>package.json</code></p>
-<pre><code class="sh">$&gt; npm install nem-library --save
-</code></pre>
+<pre class="highlight"><code class="language-sh">$&gt; npm install nem-library --save</code></pre>
 
 <p><strong>Step2</strong>: Setup phase</p>
 <p>In your application startup file, initialize NEMLibrary.</p>
-<pre><code class="typescript">import { NEMLibrary, NetworkTypes } from &quot;nem-library&quot;;
+<pre class="highlight"><code class="language-typescript">import { NEMLibrary, NetworkTypes } from &quot;nem-library&quot;;
 
-NEMLibrary.bootstrap(NetworkTypes.TEST_NET);
-</code></pre>
+NEMLibrary.bootstrap(NetworkTypes.TEST_NET);</code></pre>
 
 <p>Your application can have two modes, <code>NetworkTypes.TEST_NET</code> and <code>NetworkTypes.MAIN_NET</code>.
 Depending on the environment that you want to use, you should call the bootstrap method, with <code>MAIN_NET</code>
@@ -240,7 +244,7 @@ or <code>TEST_NET</code>.</p>
 In case you need to change between environments in runtime, call <code>NEMLibrary.reset()</code> first.</p>
 <h1 id="configure-endpoints">Configure endpoints</h1>
 <p>Each infrastructure endpoints share the same constructor.</p>
-<pre><code class="typescript">// Using custom NIS Node
+<pre class="highlight"><code class="language-typescript">// Using custom NIS Node
 const accountHttp = new AccountHttp([{
     protocol: &quot;http&quot;,
     domain: &quot;104.128.226.60&quot;,
@@ -248,8 +252,7 @@ const accountHttp = new AccountHttp([{
 }]);
 
 // Using default NIS Node
-const accountHttpWithDefaultConfig = new AccountHttp();
-</code></pre>
+const accountHttpWithDefaultConfig = new AccountHttp();</code></pre>
 
 <p>The default values are:</p>
 <p><strong>TEST NET</strong></p>
@@ -349,7 +352,7 @@ const accountHttpWithDefaultConfig = new AccountHttp();
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../connection_pool/" class="btn btn-neutral float-right" title="Connection pool">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../connection_pool/" class="btn btn-neutral float-right" title="Connection Pool">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
         <a href="../architecture/" class="btn btn-neutral" title="Architecture"><span class="icon icon-circle-arrow-left"></span> Previous</a>
@@ -366,12 +369,12 @@ const accountHttpWithDefaultConfig = new AccountHttp();
 
   Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
 </footer>
-	  
+      
         </div>
       </div>
 
     </section>
-    
+
   </div>
 
   <div class="rst-versions" role="note" style="cursor: pointer">
@@ -387,7 +390,9 @@ const accountHttpWithDefaultConfig = new AccountHttp();
       
     </span>
 </div>
-    <script src="../../js/theme.js"></script>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
 
 </body>
 </html>

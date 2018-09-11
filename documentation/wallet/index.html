@@ -8,23 +8,28 @@
   
   
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>Wallet - NEM Library</title>
+  <title>Wallets - NEM Library</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
-  <link rel="stylesheet" href="../../css/highlight.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  <link href="../../extra.css" rel="stylesheet">
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Wallet";
+    var mkdocs_page_name = "Wallets";
     var mkdocs_page_input_path = "documentation/wallet.md";
     var mkdocs_page_url = "/documentation/wallet/";
   </script>
   
-  <script src="../../js/jquery-2.1.1.min.js"></script>
-  <script src="../../js/modernizr-2.8.3.min.js"></script>
-  <script type="text/javascript" src="../../js/highlight.pack.js"></script> 
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/typescript.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/json.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
   
 </head>
 
@@ -38,7 +43,7 @@
         <a href="../.." class="icon icon-home"> NEM Library</a>
         <div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
   </form>
 </div>
       </div>
@@ -62,47 +67,43 @@
                 </li>
                 <li class="">
                     
-    <a class="" href="../overview/">Overview</a>
+    <a class="" href="../overview/">Installation</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../connection_pool/">Connection pool</a>
+    <a class="" href="../connection_pool/">Connection Pool</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../account/">Account</a>
+    <a class="" href="../account/">Account related requests</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../transaction/">Transaction</a>
+    <a class="" href="../transaction/">Initiating transactions requests</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../namespace/">Namespace</a>
+    <a class="" href="../namespace/">Namespace related requests</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../mosaic/">Mosaic</a>
+    <a class="" href="../mosaic/">Mosaic related requests</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../custom_mosaics/">Custom mosaics</a>
+    <a class="" href="../node/">Node related requests</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../node/">Node</a>
+    <a class="" href="../blockchain/">Blockchain related requests</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../blockchain/">Blockchain</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../listener/">Listener</a>
+    <a class="" href="../listener/">Listeners</a>
                 </li>
                 <li class=" current">
                     
-    <a class="current" href="./">Wallet</a>
+    <a class="current" href="./">Wallets</a>
     <ul class="subnav">
             
     <li class="toctree-l3"><a href="#wallets">Wallets</a></li>
@@ -139,11 +140,11 @@
                 </li>
                 <li class="">
                     
-    <a class="" href="../service/">Service</a>
+    <a class="" href="../service/">AccountOwnedMosaicsService</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../error/">Error</a>
+    <a class="" href="../error/">Errors</a>
                 </li>
     </ul>
 	    </li>
@@ -154,7 +155,7 @@
     <ul class="subnav">
                 <li class="">
                     
-    <a class="" href="../../guide/overview/">Overview</a>
+    <a class="" href="../../guide/overview/">Working examples</a>
                 </li>
                 <li class="">
                     
@@ -189,6 +190,11 @@
     <a class="" href="../../guide/wallet/">Wallet</a>
                 </li>
     </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../more_software/">More Software</a>
 	    </li>
           
             <li class="toctree-l1">
@@ -232,7 +238,7 @@
         
       
     
-    <li>Wallet</li>
+    <li>Wallets</li>
     <li class="wy-breadcrumbs-aside">
       
         <a href="https://github.com/aleixmorgadas/nem-library-docs/edit/master/docs/documentation/wallet.md"
@@ -247,7 +253,7 @@
               
                 <h1 id="wallets">Wallets</h1>
 <h1 id="simplewallet-definition">SimpleWallet definition</h1>
-<pre><code class="typescript">/**
+<pre class="highlight"><code class="language-typescript">/**
  * Simple wallet model generates a private key from a PRNG
  */
 export declare class SimpleWallet extends Wallet {
@@ -302,11 +308,10 @@ export declare class SimpleWallet extends Wallet {
     */
     static readFromWLT(wlt: string): SimpleWallet;
 }
-
 </code></pre>
 
 <h1 id="simplewallet-usage">SimpleWallet usage</h1>
-<pre><code class="typescript">/**
+<pre class="highlight"><code class="language-typescript">/**
  * nem-library 0.3.0
  */
 
@@ -318,11 +323,10 @@ NEMLibrary.bootstrap(NetworkTypes.TEST_NET);
 const password = new Password(&quot;password&quot;);
 const simpleWallet = SimpleWallet.create(&quot;simple wallet&quot;, password);
 
-console.log(simpleWallet);
-</code></pre>
+console.log(simpleWallet);</code></pre>
 
 <p>Output</p>
-<pre><code>SimpleWallet {
+<pre class="highlight"><code>SimpleWallet {
   name: 'simple wallet',
   network: 152,
   address: 
@@ -337,12 +341,11 @@ console.log(simpleWallet);
    EncryptedPrivateKey {
      encryptedKey: '2cb583e61208964d465955cc35c86c9e83733a10adc40cee6b8c650478ffe3667ccb70328a0dc2c67de9770806040580',
      iv: 'c192d9a501c7dde5c7e05186c93b63da' } }
-
 </code></pre>
 
 <p><a href="https://github.com/aleixmorgadas/nem-library-examples/blob/master/concepts/wallet/SimpleWalletExample.ts">Run the code</a></p>
 <h1 id="brainwallet-definition">BrainWallet definition</h1>
-<pre><code class="typescript">/**
+<pre class="highlight"><code class="language-typescript">/**
  * Brain wallet derived the private key from the brainPassword, hashing the brainPassword multiple times, therefore it's crucial to select a SAFE brainPassword.
  */
 export declare class BrainWallet extends Wallet {
@@ -383,11 +386,10 @@ export declare class BrainWallet extends Wallet {
     */
     static readFromWLT(wlt: string): BrainWallet;
 }
-
 </code></pre>
 
 <h1 id="brainwallet-usage">BrainWallet usage</h1>
-<pre><code class="typescript">/**
+<p><pre class="highlight"><code class="language-typescript">/**
  * nem-library 0.3.0
  */
 
@@ -399,11 +401,9 @@ NEMLibrary.bootstrap(NetworkTypes.TEST_NET);
 const brainPassword =  new BrainPassword(&quot;entertain destruction sassy impartial morning electric limit glib bait grape icy measure&quot;)
 const brainWallet = BrainWallet.create(&quot;brain wallet&quot;, brainPassword);
 
-console.log(brainWallet);
-</code></pre>
-
-<p>Output</p>
-<pre><code>BrainWallet {
+console.log(brainWallet);</code></pre>
+Output</p>
+<pre class="highlight"><code>BrainWallet {
   name: 'brain wallet',
   network: 152,
   address: 
@@ -414,13 +414,12 @@ console.log(brainWallet);
    LocalDateTime {
      _date: LocalDate { _year: 2017, _month: 7, _day: 24 },
      _time: LocalTime { _hour: 16, _minute: 44, _second: 42, _nano: 402000000 } } }
-
 </code></pre>
 
 <p><a href="https://github.com/aleixmorgadas/nem-library-examples/blob/master/concepts/wallet/BrainWalletExample.ts">Run the code</a></p>
 <h1 id="models">Models</h1>
 <h2 id="wallet">Wallet</h2>
-<pre><code class="typescript">export enum WalletType {
+<pre class="highlight"><code class="language-typescript">export enum WalletType {
   SIMPLE,
   BRAIN
 }
@@ -463,11 +462,10 @@ export declare abstract class Wallet {
     */
     static walletTypeGivenWLT(wlt: string): WalletType;
 }
-
 </code></pre>
 
 <h2 id="password">Password</h2>
-<pre><code class="typescript">/**
+<pre class="highlight"><code class="language-typescript">/**
  * Password model
  */
 export declare class Password {
@@ -483,11 +481,10 @@ export declare class Password {
      */
     constructor(password: string);
 }
-
 </code></pre>
 
 <h2 id="brainpassword">BrainPassword</h2>
-<pre><code class="typescript">/**
+<pre class="highlight"><code class="language-typescript">/**
  * Brain password is an extended version of Password. With the brain password we derive the private key in BrainWallets.
  */
 export declare class BrainPassword extends Password {
@@ -499,11 +496,10 @@ export declare class BrainPassword extends Password {
     constructor(password: string);
 }
 
-
 </code></pre>
 
 <h2 id="encryptedprivatekey">EncryptedPrivateKey</h2>
-<pre><code class="typescript">/**
+<pre class="highlight"><code class="language-typescript">/**
  * EncryptedPrivateKey model
  */
 export declare class EncryptedPrivateKey {
@@ -517,8 +513,7 @@ export declare class EncryptedPrivateKey {
      * Initialization vector used in the decrypt process
      */
     readonly iv: string;
-}
-</code></pre>
+}</code></pre>
               
             </div>
           </div>
@@ -526,10 +521,10 @@ export declare class EncryptedPrivateKey {
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../service/" class="btn btn-neutral float-right" title="Service">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../service/" class="btn btn-neutral float-right" title="AccountOwnedMosaicsService">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../listener/" class="btn btn-neutral" title="Listener"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../listener/" class="btn btn-neutral" title="Listeners"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -543,12 +538,12 @@ export declare class EncryptedPrivateKey {
 
   Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
 </footer>
-	  
+      
         </div>
       </div>
 
     </section>
-    
+
   </div>
 
   <div class="rst-versions" role="note" style="cursor: pointer">
@@ -564,7 +559,9 @@ export declare class EncryptedPrivateKey {
       
     </span>
 </div>
-    <script src="../../js/theme.js"></script>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
 
 </body>
 </html>

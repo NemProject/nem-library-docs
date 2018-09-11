@@ -13,7 +13,8 @@
 
   <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
-  <link rel="stylesheet" href="../../css/highlight.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  <link href="../../extra.css" rel="stylesheet">
   
   <script>
     // Current page data
@@ -22,9 +23,13 @@
     var mkdocs_page_url = "/guide/namespace/";
   </script>
   
-  <script src="../../js/jquery-2.1.1.min.js"></script>
-  <script src="../../js/modernizr-2.8.3.min.js"></script>
-  <script type="text/javascript" src="../../js/highlight.pack.js"></script> 
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/typescript.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/json.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
   
 </head>
 
@@ -38,7 +43,7 @@
         <a href="../.." class="icon icon-home"> NEM Library</a>
         <div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
   </form>
 </div>
       </div>
@@ -62,55 +67,51 @@
                 </li>
                 <li class="">
                     
-    <a class="" href="../../documentation/overview/">Overview</a>
+    <a class="" href="../../documentation/overview/">Installation</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../documentation/connection_pool/">Connection pool</a>
+    <a class="" href="../../documentation/connection_pool/">Connection Pool</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../documentation/account/">Account</a>
+    <a class="" href="../../documentation/account/">Account related requests</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../documentation/transaction/">Transaction</a>
+    <a class="" href="../../documentation/transaction/">Initiating transactions requests</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../documentation/namespace/">Namespace</a>
+    <a class="" href="../../documentation/namespace/">Namespace related requests</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../documentation/mosaic/">Mosaic</a>
+    <a class="" href="../../documentation/mosaic/">Mosaic related requests</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../documentation/custom_mosaics/">Custom mosaics</a>
+    <a class="" href="../../documentation/node/">Node related requests</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../documentation/node/">Node</a>
+    <a class="" href="../../documentation/blockchain/">Blockchain related requests</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../documentation/blockchain/">Blockchain</a>
+    <a class="" href="../../documentation/listener/">Listeners</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../documentation/listener/">Listener</a>
+    <a class="" href="../../documentation/wallet/">Wallets</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../documentation/wallet/">Wallet</a>
+    <a class="" href="../../documentation/service/">AccountOwnedMosaicsService</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../documentation/service/">Service</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../../documentation/error/">Error</a>
+    <a class="" href="../../documentation/error/">Errors</a>
                 </li>
     </ul>
 	    </li>
@@ -121,7 +122,7 @@
     <ul class="subnav">
                 <li class="">
                     
-    <a class="" href="../overview/">Overview</a>
+    <a class="" href="../overview/">Working examples</a>
                 </li>
                 <li class="">
                     
@@ -171,6 +172,11 @@
     <a class="" href="../wallet/">Wallet</a>
                 </li>
     </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../more_software/">More Software</a>
 	    </li>
           
             <li class="toctree-l1">
@@ -228,7 +234,7 @@
             <div class="section">
               
                 <h3 id="how-to-create-a-namespace">How to create a Namespace</h3>
-<pre><code class="typescript">import{
+<pre class="highlight"><code class="language-typescript">import{
     NEMLibrary, NetworkTypes, Transaction, TimeWindow, ProvisionNamespaceTransaction, Account, TransactionHttp
 } from &quot;nem-library&quot;;
 
@@ -249,12 +255,11 @@ const provisionNamespaceTransaction: Transaction = ProvisionNamespaceTransaction
 );
 
 const signedTransaction = account.signTransaction(provisionNamespaceTransaction);
-transactionHttp.announceTransaction(signedTransaction).subscribe( x =&gt; console.log(x));
-</code></pre>
+transactionHttp.announceTransaction(signedTransaction).subscribe( x =&gt; console.log(x));</code></pre>
 
 <p><a href="https://github.com/aleixmorgadas/nem-library-examples/blob/master/howto/namespace/How_to_create_a_Namespace.ts">Source code</a></p>
 <h3 id="how-to-create-a-sub-namespace">How to create a Sub-Namespace</h3>
-<pre><code class="typescript">import {
+<pre class="highlight"><code class="language-typescript">import {
     NEMLibrary, NetworkTypes, Transaction, TimeWindow, ProvisionNamespaceTransaction, Account, TransactionHttp
 } from &quot;nem-library&quot;;
 
@@ -278,12 +283,11 @@ const provisionNamespaceTransaction: Transaction = ProvisionNamespaceTransaction
 
 const signedTransaction = account.signTransaction(provisionNamespaceTransaction);
 transactionHttp.announceTransaction(signedTransaction).subscribe( x =&gt; console.log(x));
-
 </code></pre>
 
 <p><a href="https://github.com/aleixmorgadas/nem-library-examples/blob/master/howto/namespace/How_to_create_a_Sub_Namespace.ts">Source code</a></p>
 <h3 id="how-to-know-if-a-namespace-exists">How to know if a Namespace exists</h3>
-<pre><code class="typescript">import {
+<pre class="highlight"><code class="language-typescript">import {
     NEMLibrary, NetworkTypes, NamespaceHttp
 } from &quot;nem-library&quot;;
 
@@ -293,12 +297,11 @@ NEMLibrary.bootstrap(NetworkTypes.TEST_NET);
 const namespaceHttp = new NamespaceHttp();
 const namespace = &quot;new-namespace&quot;;
 
-namespaceHttp.getNamespace(namespace).subscribe(namespace =&gt; console.log(namespace));
-</code></pre>
+namespaceHttp.getNamespace(namespace).subscribe(namespace =&gt; console.log(namespace));</code></pre>
 
 <p><a href="https://github.com/aleixmorgadas/nem-library-examples/blob/master/howto/namespace/How_to_know_if_a_Namespace_exists.ts">Source code</a></p>
 <h3 id="how-to-know-the-owner-of-a-namespace">How to know the owner of a Namespace</h3>
-<pre><code class="typescript">import {
+<pre class="highlight"><code class="language-typescript">import {
     NEMLibrary, NetworkTypes, NamespaceHttp
 } from &quot;nem-library&quot;;
 
@@ -309,7 +312,6 @@ const namespaceHttp = new NamespaceHttp();
 const namespace = &quot;new-namespace&quot;;
 
 namespaceHttp.getNamespace(namespace).subscribe(namespace =&gt; console.log(namespace));
-
 </code></pre>
 
 <p><a href="https://github.com/aleixmorgadas/nem-library-examples/blob/master/howto/namespace/How_to_know_the_owner_of_a_Namespace.ts">Source code</a></p>
@@ -337,12 +339,12 @@ namespaceHttp.getNamespace(namespace).subscribe(namespace =&gt; console.log(name
 
   Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
 </footer>
-	  
+      
         </div>
       </div>
 
     </section>
-    
+
   </div>
 
   <div class="rst-versions" role="note" style="cursor: pointer">
@@ -358,7 +360,9 @@ namespaceHttp.getNamespace(namespace).subscribe(namespace =&gt; console.log(name
       
     </span>
 </div>
-    <script src="../../js/theme.js"></script>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
 
 </body>
 </html>

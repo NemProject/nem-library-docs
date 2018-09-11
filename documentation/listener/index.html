@@ -8,23 +8,28 @@
   
   
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>Listener - NEM Library</title>
+  <title>Listeners - NEM Library</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
-  <link rel="stylesheet" href="../../css/highlight.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  <link href="../../extra.css" rel="stylesheet">
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Listener";
+    var mkdocs_page_name = "Listeners";
     var mkdocs_page_input_path = "documentation/listener.md";
     var mkdocs_page_url = "/documentation/listener/";
   </script>
   
-  <script src="../../js/jquery-2.1.1.min.js"></script>
-  <script src="../../js/modernizr-2.8.3.min.js"></script>
-  <script type="text/javascript" src="../../js/highlight.pack.js"></script> 
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/typescript.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/json.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
   
 </head>
 
@@ -38,7 +43,7 @@
         <a href="../.." class="icon icon-home"> NEM Library</a>
         <div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
   </form>
 </div>
       </div>
@@ -62,43 +67,39 @@
                 </li>
                 <li class="">
                     
-    <a class="" href="../overview/">Overview</a>
+    <a class="" href="../overview/">Installation</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../connection_pool/">Connection pool</a>
+    <a class="" href="../connection_pool/">Connection Pool</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../account/">Account</a>
+    <a class="" href="../account/">Account related requests</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../transaction/">Transaction</a>
+    <a class="" href="../transaction/">Initiating transactions requests</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../namespace/">Namespace</a>
+    <a class="" href="../namespace/">Namespace related requests</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../mosaic/">Mosaic</a>
+    <a class="" href="../mosaic/">Mosaic related requests</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../custom_mosaics/">Custom mosaics</a>
+    <a class="" href="../node/">Node related requests</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../node/">Node</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../blockchain/">Blockchain</a>
+    <a class="" href="../blockchain/">Blockchain related requests</a>
                 </li>
                 <li class=" current">
                     
-    <a class="current" href="./">Listener</a>
+    <a class="current" href="./">Listeners</a>
     <ul class="subnav">
             
     <li class="toctree-l3"><a href="#listeners">Listeners</a></li>
@@ -123,15 +124,15 @@
                 </li>
                 <li class="">
                     
-    <a class="" href="../wallet/">Wallet</a>
+    <a class="" href="../wallet/">Wallets</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../service/">Service</a>
+    <a class="" href="../service/">AccountOwnedMosaicsService</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../error/">Error</a>
+    <a class="" href="../error/">Errors</a>
                 </li>
     </ul>
 	    </li>
@@ -142,7 +143,7 @@
     <ul class="subnav">
                 <li class="">
                     
-    <a class="" href="../../guide/overview/">Overview</a>
+    <a class="" href="../../guide/overview/">Working examples</a>
                 </li>
                 <li class="">
                     
@@ -177,6 +178,11 @@
     <a class="" href="../../guide/wallet/">Wallet</a>
                 </li>
     </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../more_software/">More Software</a>
 	    </li>
           
             <li class="toctree-l1">
@@ -220,7 +226,7 @@
         
       
     
-    <li>Listener</li>
+    <li>Listeners</li>
     <li class="wy-breadcrumbs-aside">
       
         <a href="https://github.com/aleixmorgadas/nem-library-docs/edit/master/docs/documentation/listener.md"
@@ -235,7 +241,7 @@
               
                 <h1 id="listeners">Listeners</h1>
 <h1 id="accountlistener-definition">AccountListener definition</h1>
-<pre><code class="typescript">/**
+<pre class="highlight"><code class="language-typescript">/**
  * Account listener
  */
 export declare class AccountListener extends Listener {
@@ -254,11 +260,10 @@ export declare class AccountListener extends Listener {
     given(address: Address): Observable&lt;AccountInfoWithMetaData&gt;;
 }
 
-
 </code></pre>
 
 <h1 id="accountlistener-usage">AccountListener usage</h1>
-<pre><code class="typescript">/**
+<pre class="highlight"><code class="language-typescript">/**
  * nem-library 0.3.0
  */
 
@@ -274,11 +279,10 @@ let accountListener = new AccountListener().given(address).subscribe(x =&gt; {
     console.log(err);
 });
 
-
 </code></pre>
 
 <p>Output</p>
-<pre><code>AccountInfoWithMetaData {
+<pre class="highlight"><code>AccountInfoWithMetaData {
   balance: 
    Balance {
      balance: 10246300001,
@@ -313,12 +317,11 @@ let accountListener = new AccountListener().given(address).subscribe(x =&gt; {
        cosignatoriesCount: undefined,
        minCosignatories: undefined } ],
   cosignatories: [] }
-
 </code></pre>
 
 <p><a href="https://github.com/aleixmorgadas/nem-library-examples/blob/master/concepts/wallet/SimpleWalletExample.ts">Run the code</a></p>
 <h1 id="blockchainlistener-definition">BlockchainListener definition</h1>
-<pre><code class="typescript">/**
+<pre class="highlight"><code class="language-typescript">/**
  * Blockchain listener
  */
 export declare class BlockchainListener extends Listener {
@@ -342,11 +345,10 @@ export declare class BlockchainListener extends Listener {
     newHeight(): Observable&lt;BlockHeight&gt;;
 }
 
-
 </code></pre>
 
 <h1 id="unconfirmedtransactionlistener-definition">UnconfirmedTransactionListener definition</h1>
-<pre><code class="typescript">/**
+<pre class="highlight"><code class="language-typescript">/**
  * UnconfirmedTransaction listener
  */
 export declare class UnconfirmedTransactionListener extends Listener {
@@ -366,11 +368,10 @@ export declare class UnconfirmedTransactionListener extends Listener {
 
 }
 
-
 </code></pre>
 
 <h1 id="confirmedtransactionlistener-definition">ConfirmedTransactionListener definition</h1>
-<pre><code class="typescript">/**
+<pre class="highlight"><code class="language-typescript">/**
  * ConfirmedTransaction listener
  */
 export declare class ConfirmedTransactionListener extends Listener {
@@ -389,7 +390,6 @@ export declare class ConfirmedTransactionListener extends Listener {
     given(address: Address): Observable&lt;Transaction&gt;;
 
 }
-
 </code></pre>
               
             </div>
@@ -398,10 +398,10 @@ export declare class ConfirmedTransactionListener extends Listener {
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../wallet/" class="btn btn-neutral float-right" title="Wallet">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../wallet/" class="btn btn-neutral float-right" title="Wallets">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../blockchain/" class="btn btn-neutral" title="Blockchain"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../blockchain/" class="btn btn-neutral" title="Blockchain related requests"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -415,12 +415,12 @@ export declare class ConfirmedTransactionListener extends Listener {
 
   Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
 </footer>
-	  
+      
         </div>
       </div>
 
     </section>
-    
+
   </div>
 
   <div class="rst-versions" role="note" style="cursor: pointer">
@@ -436,7 +436,9 @@ export declare class ConfirmedTransactionListener extends Listener {
       
     </span>
 </div>
-    <script src="../../js/theme.js"></script>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
 
 </body>
 </html>

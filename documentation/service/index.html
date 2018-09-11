@@ -8,23 +8,28 @@
   
   
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>Service - NEM Library</title>
+  <title>AccountOwnedMosaicsService - NEM Library</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
-  <link rel="stylesheet" href="../../css/highlight.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  <link href="../../extra.css" rel="stylesheet">
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Service";
+    var mkdocs_page_name = "AccountOwnedMosaicsService";
     var mkdocs_page_input_path = "documentation/service.md";
     var mkdocs_page_url = "/documentation/service/";
   </script>
   
-  <script src="../../js/jquery-2.1.1.min.js"></script>
-  <script src="../../js/modernizr-2.8.3.min.js"></script>
-  <script type="text/javascript" src="../../js/highlight.pack.js"></script> 
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/typescript.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/json.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
   
 </head>
 
@@ -38,7 +43,7 @@
         <a href="../.." class="icon icon-home"> NEM Library</a>
         <div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
   </form>
 </div>
       </div>
@@ -62,51 +67,47 @@
                 </li>
                 <li class="">
                     
-    <a class="" href="../overview/">Overview</a>
+    <a class="" href="../overview/">Installation</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../connection_pool/">Connection pool</a>
+    <a class="" href="../connection_pool/">Connection Pool</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../account/">Account</a>
+    <a class="" href="../account/">Account related requests</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../transaction/">Transaction</a>
+    <a class="" href="../transaction/">Initiating transactions requests</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../namespace/">Namespace</a>
+    <a class="" href="../namespace/">Namespace related requests</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../mosaic/">Mosaic</a>
+    <a class="" href="../mosaic/">Mosaic related requests</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../custom_mosaics/">Custom mosaics</a>
+    <a class="" href="../node/">Node related requests</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../node/">Node</a>
+    <a class="" href="../blockchain/">Blockchain related requests</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../blockchain/">Blockchain</a>
+    <a class="" href="../listener/">Listeners</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../listener/">Listener</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../wallet/">Wallet</a>
+    <a class="" href="../wallet/">Wallets</a>
                 </li>
                 <li class=" current">
                     
-    <a class="current" href="./">Service</a>
+    <a class="current" href="./">AccountOwnedMosaicsService</a>
     <ul class="subnav">
             
     <li class="toctree-l3"><a href="#accountownedmosaicsservice">AccountOwnedMosaicsService</a></li>
@@ -122,7 +123,7 @@
                 </li>
                 <li class="">
                     
-    <a class="" href="../error/">Error</a>
+    <a class="" href="../error/">Errors</a>
                 </li>
     </ul>
 	    </li>
@@ -133,7 +134,7 @@
     <ul class="subnav">
                 <li class="">
                     
-    <a class="" href="../../guide/overview/">Overview</a>
+    <a class="" href="../../guide/overview/">Working examples</a>
                 </li>
                 <li class="">
                     
@@ -168,6 +169,11 @@
     <a class="" href="../../guide/wallet/">Wallet</a>
                 </li>
     </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../more_software/">More Software</a>
 	    </li>
           
             <li class="toctree-l1">
@@ -211,7 +217,7 @@
         
       
     
-    <li>Service</li>
+    <li>AccountOwnedMosaicsService</li>
     <li class="wy-breadcrumbs-aside">
       
         <a href="https://github.com/aleixmorgadas/nem-library-docs/edit/master/docs/documentation/service.md"
@@ -226,7 +232,7 @@
               
                 <h1 id="accountownedmosaicsservice">AccountOwnedMosaicsService</h1>
 <p>Definition</p>
-<pre><code class="typescript">/**
+<pre class="highlight"><code class="language-typescript">/**
  * Service to get account owned mosaics
  */
 export declare class AccountOwnedMosaicsService {
@@ -255,11 +261,10 @@ export declare class AccountOwnedMosaicsService {
      */
     fromAddress(address: Address): Observable&lt;MosaicDefinition[]&gt;;
 }
-
 </code></pre>
 
 <p>Usage</p>
-<pre><code class="typescript">import {NEMLibrary, NetworkTypes, Address, AccountOwnedMosaicsService, AccountHttp, MosaicHttp} from &quot;nem-library&quot;;
+<pre class="highlight"><code class="language-typescript">import {NEMLibrary, NetworkTypes, Address, AccountOwnedMosaicsService, AccountHttp, MosaicHttp} from &quot;nem-library&quot;;
 
 // Initialize NEMLibrary for TEST_NET Network
 NEMLibrary.bootstrap(NetworkTypes.TEST_NET);
@@ -268,11 +273,10 @@ let address = new Address(&quot;&quot;);
 let accountOwnedMosaics = new AccountOwnedMosaicsService(new AccountHttp(), new MosaicHttp());
 accountOwnedMosaics.fromAddress(address).subscribe(mosaics =&gt; {
     console.log(mosaics);
-});
-</code></pre>
+});</code></pre>
 
 <p>Output:</p>
-<pre><code>[ MosaicDefinition {
+<pre class="highlight"><code>[ MosaicDefinition {
     creator: 
      PublicAccount {
        address: [Object],
@@ -301,13 +305,12 @@ accountOwnedMosaics.fromAddress(address).subscribe(mosaics =&gt; {
        transferable: true,
        divisibility: 0 },
     levy: MosaicLevy { type: 1, recipient: [Object], mosaicId: [Object], fee: 5 },
-    metaId: 386 }]
-</code></pre>
+    metaId: 386 }]</code></pre>
 
 <p><a href="https://github.com/aleixmorgadas/nem-library-examples/blob/master/concepts/service/AccountOwnedMosaicsService.ts">Run the code</a></p>
 <h1 id="mosaicservice">MosaicService</h1>
 <p>Definition</p>
-<pre><code class="typescript">/**
+<pre class="highlight"><code class="language-typescript">/**
  * Mosaic service
  */
 export declare class MosaicService {
@@ -326,11 +329,10 @@ export declare class MosaicService {
      * @returns {any}
      */
     calculateLevy(mosaicTransferable: MosaicTransferable): Observable&lt;number&gt;;
-}
-</code></pre>
+}</code></pre>
 
 <p>Usage</p>
-<pre><code class="typescript">import {NEMLibrary, NetworkTypes, MosaicId, MosaicLevy, MosaicLevyType, Address, MosaicTransferable, MosaicHttp, MosaicProperties, MosaicService} from &quot;nem-library&quot;;
+<pre class="highlight"><code class="language-typescript">import {NEMLibrary, NetworkTypes, MosaicId, MosaicLevy, MosaicLevyType, Address, MosaicTransferable, MosaicHttp, MosaicProperties, MosaicService} from &quot;nem-library&quot;;
 
 // Initialize NEMLibrary for TEST_NET Network
 NEMLibrary.bootstrap(NetworkTypes.TEST_NET);
@@ -342,17 +344,15 @@ let mosaicTransferable = new MosaicTransferable(new MosaicId(&quot;server&quot;,
 let mosaicService = new MosaicService(new MosaicHttp());
 mosaicService.calculateLevy(mosaicTransferable).subscribe(levy =&gt; {
     console.log(levy);
-});
-</code></pre>
+});</code></pre>
 
 <p>Output:</p>
-<pre><code>5
-</code></pre>
+<pre class="highlight"><code>5</code></pre>
 
 <p><a href="https://github.com/aleixmorgadas/nem-library-examples/blob/master/concepts/service/MosaicService.ts">Run the code</a></p>
 <h1 id="qrservice">QRService</h1>
 <p>Definition</p>
-<pre><code class="typescript">export declare class QRService {
+<pre class="highlight"><code class="language-typescript">export declare class QRService {
     /**
      * Generates the QR text from the wallet
      * @returns {string}
@@ -387,8 +387,7 @@ mosaicService.calculateLevy(mosaicTransferable).subscribe(levy =&gt; {
      * @return TransferTransaction
      */
     decryptTrasactionQRText(qrTransactionText: QRTransactionText): TransferTransaction;
-}
-</code></pre>
+}</code></pre>
               
             </div>
           </div>
@@ -396,10 +395,10 @@ mosaicService.calculateLevy(mosaicTransferable).subscribe(levy =&gt; {
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../error/" class="btn btn-neutral float-right" title="Error">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../error/" class="btn btn-neutral float-right" title="Errors">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../wallet/" class="btn btn-neutral" title="Wallet"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../wallet/" class="btn btn-neutral" title="Wallets"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -413,12 +412,12 @@ mosaicService.calculateLevy(mosaicTransferable).subscribe(levy =&gt; {
 
   Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
 </footer>
-	  
+      
         </div>
       </div>
 
     </section>
-    
+
   </div>
 
   <div class="rst-versions" role="note" style="cursor: pointer">
@@ -434,7 +433,9 @@ mosaicService.calculateLevy(mosaicTransferable).subscribe(levy =&gt; {
       
     </span>
 </div>
-    <script src="../../js/theme.js"></script>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
 
 </body>
 </html>
