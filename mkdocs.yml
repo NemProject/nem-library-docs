@@ -26,6 +26,7 @@ nav:
     - 'guide/blockchain.md'
     - 'guide/listener.md'
     - 'guide/wallet.md'
+  - More Software: 'more_software.md'
 
   - Support: 'support.md'
   - Internal Development Process: 'internal_development_process.md'
