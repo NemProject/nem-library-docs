@@ -1,13 +1,13 @@
 # Libraries
 
-## nem-voting
+## nem-voting by shierve
 
 nem-voting is a typescript / node.js module for using the NEM voting functionalities easily on any project. Created using NEM-library.
 
 - [Source Code](https://github.com/shierve/nem-voting#readme)
 - [npmjs](https://www.npmjs.com/package/nem-voting)
 
-## nem-trezor
+## nem-trezor by shierve
 
 nem-trezor is a typescript / node.js npm module that adds trezor functionalities to nem-library.
 
