@@ -18,3 +18,11 @@ The library only works in a browser environment because of the way trezor is imp
 - [trezor.io](https://trezor.io/)
 - [Source Code](https://github.com/shierve/nem-trezor#readme)
 - [npmjs](https://www.npmjs.com/package/nem-trezor)
+
+# Cloud
+
+## AWS Lambda by Daoka
+
+Sample using NEMLibrary on AWS lambda.
+
+- [Source Code](https://github.com/daoka/nem-library_on_lambda)
