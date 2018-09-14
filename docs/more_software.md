@@ -29,12 +29,18 @@ Sample using NEMLibrary on AWS lambda.
 
 - [Source Code](https://github.com/daoka/nem-library_on_lambda)
 
-# Mobile Apps
+## Mobile Apps
 
-### NEMPay
+### NEMPay by dgarcia360
 
 NEMPay is a mobile app to transfer NEM mosaics easily.
 
 NEMPay has been developed in Ionic, and currently available for Android and iOS.
 
 - [Source Code](https://github.com/dgarcia360/NEMPay)
+
+## Apps
+
+### nem-faucet by 44uk
+
+- [Source Code](https://github.com/44uk/nem-faucet)
