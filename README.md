@@ -3,7 +3,7 @@
 [![npm version](https://badge.fury.io/js/nem-library.svg)](https://badge.fury.io/js/nem-library)
 [![Gitter chat](https://badges.gitter.im/nem-library-ts/Lobby.svg)](https://gitter.im/nem-library-ts/)
 
-View the documentation [here](https://nemlibrary.com).
+View the documentation [here](https://nemproject.github.io/nem-library-docs/).
 
 ## Building NEM Library Documentation
 
